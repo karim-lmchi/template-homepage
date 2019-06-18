@@ -10,5 +10,10 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp-twig": "^1.2.0",
+    "sass": "^1.21.0"
   }
 }
