@@ -8,16 +8,28 @@ const uglifycss = require('gulp-uglifycss');
 const pipeline = require('readable-stream').pipeline;
 
 
+/*
+  Configurations
+*/
+
+const autoprefixerOption = { 
+    browsers : ['last 2 versions'],
+    cascade : false
+};
+
+const serverOption = {
+  baseDir: "dist/html",
+  directory: true
+};
+
+
 /* 
-  Configuration server
+  Tâches server
 */
 
 gulp.task('serve', function () {
   browserSync.init({
-    server: {
-      baseDir: "dist/html",
-      directory: true
-    },
+    server: { serverOption },
     browser: "chrome"
   });
 });
@@ -32,33 +44,16 @@ sass.compiler = require('node-sass');
 gulp.task('css', function () {
   return gulp.src('src/assets/sass/*.scss')
     .pipe(sass.sync().on('error', sass.logError))
-    .pipe(gulp.dest('src/assets/compile'));
+    .pipe(autoprefixer({ autoprefixerOption }))
+    .pipe(gulp.dest('dist/assets/css')) 
 });
-
-gulp.task('css:watch', function () {
-  gulp.watch('src/assets/sass/*.scss', ['css']);
-});
-
-
-/*
-  Configuration de l'autoprefixer
-*/
-
-gulp.task('autoprefixer', () =>
-  gulp.src('src/assets/sass/compile/*.css')
-  .pipe(autoprefixer({
-    browsers: ['last 2 versions'],
-    cascade: false
-  }))
-  .pipe(gulp.dest('dist/assets/css'))
-);
 
 
 /*
   Configuration du twig
 */
 
-gulp.task('compile', function () {
+gulp.task('html', function () {
   return gulp.src('src/twig/pages/*.twig')
     .pipe(twig({}))
     .pipe(gulp.dest('dist/html'));
@@ -79,7 +74,7 @@ gulp.task('compressjs', function () {
 
 
 /*
-  Configuration de l'uglify js
+  Configuration de l'uglify css
 */
 
 gulp.task('compresscss', function () {
@@ -102,8 +97,20 @@ gulp.task('copyjs', function(){
 })
 
 
+/**
+  Configuration du watch
+*/
+
+gulp.task('watch', function() {
+  gulp.watch('src/assets/sass/**/*.scss', ['css']);
+  gulp.watch('src/twig/**/*.twig', ['html']);
+  gulp.watch('src/assets/js/**/*.js', ['copyjs']);
+});
+
+
+
 /*
   Configuration de tâches exécutées simultanéments
 */
 
-gulp.task('default', ['compile', 'css']);
+gulp.task('default', ['html', 'css', 'copyjs', 'watch']);
