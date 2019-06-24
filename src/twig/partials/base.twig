@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+
+            <meta charset="utf-8">
+            <title>Projet Socle-front</title>
+            <meta name="description" content="">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            {# <link rel="manifest" href="site.webmanifest"> #}
+            {# <link rel="apple-touch-icon" href="icon.png"> #}
+            <!-- Place favicon.ico in the root directory -->
+
+            <link rel="stylesheet" href="../assets/css/main.css">
+
+
+            <meta name="theme-color" content="#fafafa">
+
+        {% endblock %}
+
+    </head>
+
+    <body>
+
+        {% include "../components/symbols.twig" %}
+
+         <!-- Header -->
+        {% include "../partials/header.twig" %}
+
+        <!-- Contenu de la page -->
+        {% block content %}{% endblock %}
+
+        <!-- Footer -->
+        {% include "../partials/footer.twig" %}
+
+        <!-- script js -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" 
+                crossorigin="anonymous"></script> 
+        
+        <script src='../assets/js/main.js'></script>
+        
+    </body>
+
+</html>

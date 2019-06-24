@@ -1,0 +1,32 @@
+{% extends "../partials/base.twig" %}
+
+
+{% block content %}
+
+  <!-- imports des composants -->
+  {% import "../components/paragraph.twig" as paragraph %}
+  {% import "../components/input.twig" as input %}
+  {% import "../components/button.twig" as button %}
+  {% import "../components/title.twig" as title %}
+  {% import "../components/textarea.twig" as textarea %}
+  {% import "../components/label.twig" as label %}
+  {% import "../components/lien.twig" as lien %}
+
+
+  {{ paragraph.para('3eme test') }}
+  {{ input.input__text('nom', 'votre nom') }}
+  {{ button.button('envoyer') }}
+  {{ title.title__h1('title h1') }}
+  {{ title.title__h2('title h2') }}
+  {{ paragraph.para__lien("Ceci est un paragraphe de test contenant ", lien.lien('#lien', 'un lien de test2') ," en son milieu") }}
+  {{ title.title__h3('title h3') }}
+  {{ title.title__h4('title h4') }}
+  {{ label.label('test du label') }}
+  {{ textarea.textarea('5', '33') }}
+  {{ lien.lien('#lien', 'ceci est un lien de test') }}
+
+  <!-- Permet de créer une variable -->
+  {% set var = value %}
+  
+
+{% endblock %}

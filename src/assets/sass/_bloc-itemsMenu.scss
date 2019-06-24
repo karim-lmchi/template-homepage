@@ -1,0 +1,33 @@
+.itemsMenu {
+    right: -3000px;
+    width: 100%;
+    // calc() calcul la hauteur occupé sur l'écran, permet de faire des opération
+    height: calc(100vh - 50px);
+    background-color: #505050;
+    position: fixed;
+    bottom: 0;
+    transition: all 0.5s ease;
+    
+    a {
+        margin-bottom: 35px;
+        font-size: 11px;
+        color: white;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    .blocItems {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
+
+}
+
+.itemsMenuOpen {
+    right: 0;
+}

@@ -1,0 +1,16 @@
+{% block header %}
+
+    <header class = 'h-p-0-20'>
+        <!-- imports des composants --> 
+        {% import "../components/svg.twig" as svg %}
+
+        <a href = '#lien'>{{ svg.icon('icon-rocket')}}</a>
+        <nav  class = 'nav'>
+            <a href = '#lien'>{{ svg.icon('icon-menu')}}</a>
+
+            {{ bloc.itemsMenu('Home', 'Lorem', 'Ipsum', 'Dolor', 'Sit Amen')}}
+        </nav>
+        
+    </header>
+
+{% endblock %}

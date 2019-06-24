@@ -1,0 +1,33 @@
+
+
+{% macro blocphototexte(pic, valuePara, class) %}
+    <div class="{{ class }}">
+        <a href = '#lien'> {{ pic|raw }}</a>
+
+        <p class="h-pt-30 h-mb-40">{{ valuePara }}</p>
+
+    </div>
+{% endmacro %}
+
+
+{% macro acceuil(titleH1, valuePara, class) %}
+    <div class="{{ class }}">
+        {{ titleH1|raw }}
+
+        <p class="h-pt-30">{{ valuePara }}</p>
+    </div>
+    
+{% endmacro %}
+
+
+{% macro itemsMenu(item1, item2, item3, item4, item5) %}
+    <div class = 'itemsMenu'>
+        <div class = 'blocItems'>
+            <a href='#'>{{ item1 }}</a>
+            <a href='#'>{{ item2 }}</a>
+            <a href='#'>{{ item3 }}</a>
+            <a href='#'>{{ item4 }}</a>
+            <a href='#'>{{ item5 }}</a>
+        </div>
+    </div>
+{% endmacro %}

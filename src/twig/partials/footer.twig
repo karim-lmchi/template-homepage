@@ -1,0 +1,16 @@
+{% block footer %}
+    <footer>
+
+        <!-- imports des composants -->
+        {% import "../components/title.twig" as title %}
+        {% import "../components/lien.twig" as lien %}
+
+        {{ title.title__h2('SITES')}}
+        {{ lien.lien('#link1', 'link 1')}}
+        {{ lien.lien('#link2', 'link 2')}}
+        {{ lien.lien('#link3', 'link 3')}}
+
+        <p>Copyright Lorem ipsum</p>
+
+    </footer> 
+{% endblock %}

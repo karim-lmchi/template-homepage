@@ -1,0 +1,22 @@
+{% extends "../partials/base.twig" %}
+
+{% block content %}
+
+    <!-- imports des partials -->
+    {% import "../partials/bloc.twig" as bloc %}
+    <!-- imports des composants -->
+    {% import "../components/media.twig" as media %}
+    {% import "../components/title.twig" as title %}
+
+    {% set article = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas risus neque, pretium in ipsum at, efficitur malesuada est. Integer congue turpis sed faucibus dapibus.' %}
+    {% set img1 = media.image('../assets/img/photo-projetTest.jpg','image de paysage', 'img') %}
+    {% set img2 = media.image('../assets/img/photo-projetTest2.jpg','image de paysage', 'img') %}
+
+    
+    {{ bloc.acceuil(title.title__h1('LOREM IPSUM'),
+                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas risus neque, pretium in ipsum at, efficitur malesuada est.',
+                     'bloc-acceuil h-p-0-20') }}
+    {{ bloc.blocphototexte(img2, article, 'bloc-media h-p-0-20 h-pt-40') }}
+    {{ bloc.blocphototexte(img2, article, 'bloc-media h-p-0-20') }}
+
+{% endblock %}

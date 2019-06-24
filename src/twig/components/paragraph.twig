@@ -1,0 +1,7 @@
+{% macro para(value) %}
+    <p>{{ value }}</p>
+{% endmacro %}
+
+{% macro para__lien(value1, lien, value2) %}
+    <p>{{ value1 }} {{ lien|raw }} {{ value2 }}</p>
+{% endmacro %}

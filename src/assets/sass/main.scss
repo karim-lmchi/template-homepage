@@ -1,0 +1,23 @@
+// importer tous les fichiers scss utilisés
+
+@charset "utf-8";
+
+// import du normalize css
+@import "modern-normalize";
+
+// import base css
+@import "base";
+@import "helpers";
+
+// import des composants
+@import "symbol";
+@import "header";
+@import "body";
+@import "footer";
+@import "titleH1";
+
+// imports des partials
+@import "bloc-media";
+@import "bloc-acceuil";
+@import "bloc-itemsMenu";
+

@@ -1,0 +1,10 @@
+h1 {
+    &:after{
+        content: '';
+        display: block;
+        border-bottom: 2px solid white;
+        padding-top: 20px;
+        width: 80%;
+        margin: 0 auto;
+    }
+}

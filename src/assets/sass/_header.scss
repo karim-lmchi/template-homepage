@@ -1,0 +1,11 @@
+header {
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    // effet de profondeur
+    z-index: 2;
+}
